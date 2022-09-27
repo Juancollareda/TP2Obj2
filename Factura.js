@@ -1,6 +1,6 @@
 
 function Factura(Empleado,Pieza){
-     
+    this.pieza=PIe
     this.Montototal=function(){
         if (numeroPositivoCoherente(this.cantpieza) && numeroPositivoCoherente(this.valorporunidad)){
             return this.cantpieza*this.valorporunidad
@@ -18,4 +18,4 @@ function Factura(Empleado,Pieza){
 
 }
 
-module.export=Factura
+module.exports=Factura
