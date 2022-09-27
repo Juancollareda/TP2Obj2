@@ -1,10 +1,9 @@
 
 const Stock = require("./Stock");
-function Factura (vendedor) {
+function Factura (vendedor,id) {
     var pieza = [];
     this.id = id;
     this.vendedor = vendedor;
-    id++;
     this.Factura = function () {
       console.log(
         "Factura id:" +
