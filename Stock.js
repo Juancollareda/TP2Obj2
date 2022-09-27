@@ -4,14 +4,14 @@ const Stock = (function () {
       if (cantidad >= 0) {
         pieza.stock += cantidad;
       } else {
-        throw "error";
+        throw new Error("error");
       }
     },
     restarStock: function (pieza, cantidad) {
       if (cantidad>0) {
         pieza.stock = pieza.stock-cantidad;
       } else {
-        throw ("La cantidad debe ser positiva");
+        throw new Error("La cantidad debe ser positiva");
       }
     },
     mirarStock: function (pieza) {

@@ -1,40 +1,36 @@
-const Validacion= (function () {
-    return {
-     
-      sueldoValido: function (sueldo) {
-        if (sueldo <= 0) {
-          throw new Error("El sueldo incorrecto");
-        } else {
-          return true;
-        }
-      },
-      precioCantValido: function (precioUnidad) {
-        if (precioUnidad < 0) {
-          throw new Error("El precio incorrecto.");
-        } else {
-          return true;
-        }
-      },
-    
-      comisionValida: function (valor) {
-        if (valor >= 0 ) {
-          return true;
-          
-        } else {
-          
-          throw new Error(
-            "El valor incorrecto"
-          );
-        }
-      },
-      horasValidas: function (horasTrabajadas, valorHora) {
-        if (horasTrabajadas >= 0 || valorHora >= 0) {
-          return true;
-        } else {
-          throw new Error("horas incorrecta");
-        }
-      },
-    };
-  })();
-  
-  module.exports = Validacion;
+const Empleado=require('./Empleado');
+const Admin=require('./Administrativo.js');
+const Reserva=require('./Reserva.js');
+const Ventas=require('./Ventas.js');
+const Factura=require('./Factura.js');
+const Piezas=require('./Piezas.js');
+
+
+const Validacion = (function () {
+  return {
+    EsPositivo: function (cantidad) {
+      if (cantidad >= 0) {
+        pieza.stock += cantidad;
+      } else {
+        throw new Error("error");
+      }Piezas
+    },
+    esNumero: function (numero) {
+      if (typeof numero!='number') {
+        return true
+      } else {
+        throw new Error("La cantidad debe ser positiva");
+      }
+    },
+    mirarStock: function (pieza) {
+    if (pieza.stock > pieza.cantidad){
+        return true;
+    }else{
+        throw new Error("no hay stock");
+    }
+      
+    },
+  };
+})();
+
+module.exports = Validacion
