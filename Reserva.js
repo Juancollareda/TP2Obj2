@@ -19,3 +19,4 @@ function Reserva(nombre,apellido,dni,sueldo){
 
 
 }
+module.export=Reserva

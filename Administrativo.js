@@ -40,4 +40,4 @@ function Administrativo(nombre,apellido,dni,sueldo){
     }
 }
 
-
+module.export=Administrativo
