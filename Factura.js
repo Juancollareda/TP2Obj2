@@ -1,21 +1,33 @@
 
-function Factura(Empleado,Pieza){
-    this.pieza=PIe
-    this.Montototal=function(){
-        if (numeroPositivoCoherente(this.cantpieza) && numeroPositivoCoherente(this.valorporunidad)){
-            return this.cantpieza*this.valorporunidad
-        } else {
-            return "cantdepieza o valorporunidad erroneo"
-        }
-
+const Stock = require("./Stock");
+function Factura (vendedor) {
+    var pieza = [];
+    this.id = id;
+    this.vendedor = vendedor;
+    id++;
+    this.Factura = function () {
+      console.log(
+        "Factura id:" +
+          this.id +
+          "Vendedor: " +
+          this.vendedor.nombre +
+          "Monto total: " +
+          this.montoTotal +
+          "\n==========\n"
+      );
     };
-    this.DatosEmpleado=function(){
-        return this.empleado.dni+" "+this.empleado.nombre+" "+this.empleado.apellido
+  
+    this.agregarProducto = function (pieza, cantidad) {
+      if (Stock.mirarStock(pieza)) {
+        pieza.cantidad = cantidad;
+        StockHandler.quitarStock(pieza, cantidad);
+        productos.push(pieza);
+        this.productos = productos;
+        this.montoTotal += pieza.precioUnidad * pieza.cantidad;
+      } else {
+        throw new Error("No hay stock del producto" + pieza.nombre);
+      }
     };
-    this.PiezasComprar=function(){
-
-    };
-
-}
-
-module.exports=Factura
+  };
+  
+  module.exports = Factura;

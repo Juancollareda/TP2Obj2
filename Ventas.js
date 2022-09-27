@@ -33,4 +33,4 @@ function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
 
 }
 
-module.export=Ventas
+module.exports=Ventas
