@@ -1,11 +1,12 @@
 const Empleado=require('./Empleado');
+const Validacion=require('./Validacion');
 
 function Reserva(nombre,apellido,dni,sueldo){
     this.base=Empleado;
     this.base(nombre,apellido,dni);  
-    if (typeof sueldo!='number'){
+    if (Validacion.esNumero(sueldo)){
         return undefined;
-    } else if (sueldo<=0 ){
+    } else if (Validacion.EsPositivo(sueldo)){
         return undefined;
     } else if (!(this instanceof Reserva)){
         return new Reserva(nombre,apellido,dni,sueldo);
@@ -16,8 +17,8 @@ function Reserva(nombre,apellido,dni,sueldo){
 
 
     this.pagarSueldo=function(horasTotales){
-        if (typeof horasTotales == 'number'){
-            if (horasTotales>0){
+        if (!Validacion.esNumero(horasTotales)){
+            if (!Validacion.EsPositivo){
                 return (this.sueldo)*horasTotales;
             } 
         } else {

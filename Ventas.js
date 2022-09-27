@@ -7,9 +7,9 @@ function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
 
     this.base=Empleado;
     this.base(nombre,apellido,dni);  
-    if (Validacion.esNumero(comision) || typeof antiguedadEnAnios!='number'){
+    if (Validacion.esNumero(comision) || Validacion.esNumero(antiguedadEnAnios)){
         return undefined;
-    } else if (comision<=0|| antiguedadEnAnios<=0){
+    } else if (Validacion.EsPositivo(comision)|| Validacion.EsPositivo(antiguedadEnAnios)){
         return undefined;
     } else if (!(this instanceof Ventas)){
         return new Ventas(nombre,apellido,dni,comision,antiguedadEnAnios);
@@ -26,9 +26,9 @@ function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
     }
     
     this.pagarSueldo=function(){
-        if (typeof this.venta=='number'){
+        if (!Validacion.esNumero(comision)){
             var retorno=0;
-            if (this.venta>0){
+            if (!Validacion.EsPositivo(comision)){
                 retorno+=this.venta*(comision/100);
             } 
             if (this.antiguedadEnAnios>=antiguedadRequerida){

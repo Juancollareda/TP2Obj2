@@ -10,25 +10,17 @@ const Validacion = (function () {
   return {
     EsPositivo: function (cantidad) {
       if (cantidad >= 0) {
-        pieza.stock += cantidad;
+      return false
       } else {
         throw new Error("error");
-      }Piezas
-    },
-    esNumero: function (numero) {
-      if (typeof numero!='number') {
-        return true
-      } else {
-        throw new Error("La cantidad debe ser positiva");
       }
     },
-    mirarStock: function (pieza) {
-    if (pieza.stock > pieza.cantidad){
-        return true;
-    }else{
-        throw new Error("no hay stock");
-    }
-      
+    esNumero: function (numero) {
+      if (typeof numero =='number') {
+        return false
+      } else {
+        throw new Error("no es un numero");
+      }
     },
   };
 })();
