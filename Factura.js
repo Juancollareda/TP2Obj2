@@ -24,7 +24,7 @@ function Factura (vendedor,id) {
         this.Producto.push(pieza);
         this.montoTotal += pieza.PrecioCantidad * pieza.cantidad;
       } else {
-        throw new Error("No hay stock del producto" + pieza.nombre);
+        throw ("No hay stock del producto" + pieza.nombre);
       }
     };
   };
