@@ -1,5 +1,5 @@
 const Empleado=require('./Empleado');
-//const Validacion=require('./Validacion.js');
+const Validacion=require('./Validacion');
 function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
     var antiguedadRequerida=20;
     var sueldoPorAntiguedad=200;
@@ -7,7 +7,7 @@ function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
 
     this.base=Empleado;
     this.base(nombre,apellido,dni);  
-    if (typeof comision!='number' || typeof antiguedadEnAnios!='number'){
+    if (Validacion.esNumero(comision) || typeof antiguedadEnAnios!='number'){
         return undefined;
     } else if (comision<=0|| antiguedadEnAnios<=0){
         return undefined;
