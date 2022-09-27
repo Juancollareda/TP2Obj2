@@ -33,5 +33,5 @@ Reserva.prototype.nombreCompleto=function(){
     return this.nombre+" | "+this.apellido+" | ("+this.dni+")";
 }
 
-
+Reserva.prototype=Object.create(Empleado.prototype);
 module.exports=Reserva;

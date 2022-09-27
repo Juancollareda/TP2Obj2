@@ -39,5 +39,5 @@ function Administrativo(nombre,apellido,dni,sueldo){
         return this.nombre+" | "+this.apellido+" | ("+this.dni+")";
     }
 }
-
+Administrativo.prototype=Object.create(Empleado.prototype);
 module.exports=Administrativo

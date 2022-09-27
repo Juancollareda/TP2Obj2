@@ -45,6 +45,6 @@ function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
 Ventas.prototype.nombreCompleto=function(){
     return this.nombre+" | "+this.apellido+" | ("+this.dni+")";
 }
-
+Ventas.prototype=Object.create(Empleado.prototype);
 
 module.exports=Ventas;
