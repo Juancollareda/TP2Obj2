@@ -1,9 +1,10 @@
 
 const Stock = require("./Stock");
 function Factura (vendedor,id) {
-    var pieza = [];
+    this.Producto = [];
     this.id = id;
     this.vendedor = vendedor;
+    this.montoTotal = 0
     this.Factura = function () {
       console.log(
         "Factura id:" +
@@ -19,10 +20,9 @@ function Factura (vendedor,id) {
     this.agregarProducto = function (pieza, cantidad) {
       if (Stock.mirarStock(pieza)) {
         pieza.cantidad = cantidad;
-        StockHandler.quitarStock(pieza, cantidad);
-        productos.push(pieza);
-        this.productos = productos;
-        this.montoTotal += pieza.precioUnidad * pieza.cantidad;
+        Stock.restarStock(pieza, cantidad);
+        this.Producto.push(pieza);
+        this.montoTotal += pieza.PrecioCantidad * pieza.cantidad;
       } else {
         throw new Error("No hay stock del producto" + pieza.nombre);
       }

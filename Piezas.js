@@ -1,7 +1,7 @@
-function Piezas(PrecioCantidad,Nombre){   
-    this.Nombre=Nombre;
+function Piezas(PrecioCantidad,nombre){   
+    this.nombre=nombre;
     this.PrecioCantidad=PrecioCantidad;
-    this.Stock = 0;
+    this.stock = 10;
     this.Cantidad=0;
     this.ObtenePrecioCant=function(){
         return this.PrecioCantidad
