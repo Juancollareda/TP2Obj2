@@ -6,16 +6,16 @@ function Administrativo(nombre,apellido,dni,sueldo){
     this.sueldo=sueldo;
 
     this.correspondeSueldo=function(horasEnUnMes){
-        //** horas aproximadas correspondientes a un mes */
-        var horario=8*5*((365/7)/12);
+        //** horas aproximadas correspondientes a un mes /
+        var horario=85*4;
         if (horasEnUnMes>=horario){
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     };
     this.pagarSueldo=function(horasEnUnMes){
-        if (correspondeSueldo(horasEnUnMes)){
+        if (this.correspondeSueldo(horasEnUnMes)){
             return this.sueldo;
         } else {
             return 0;

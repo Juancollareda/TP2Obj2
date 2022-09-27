@@ -2,7 +2,15 @@ const Empleado=require('./Empleado');
 
 function Reserva(nombre,apellido,dni,sueldo){
     this.base=Empleado;
-    this.base(nombre,apellido,dni);
+    this.base(nombre,apellido,dni);  
+    if (typeof sueldo!='number'){
+        return undefined;
+    } else if (sueldo<=0 ){
+        return undefined;
+    } else if (!(this instanceof Reserva)){
+        return new Reserva(nombre,apellido,dni,sueldo);
+    }
+
     /** sueldo correspondiente a una hora de trabajo */
     this.sueldo=sueldo;
 
@@ -19,4 +27,10 @@ function Reserva(nombre,apellido,dni,sueldo){
 
 
 }
-module.exports=Reserva
+
+Reserva.prototype.nombreCompleto=function(){
+    return this.nombre+" | "+this.apellido+" | ("+this.dni+")";
+}
+
+
+module.exports=Reserva;

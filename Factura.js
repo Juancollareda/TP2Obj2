@@ -18,14 +18,13 @@ function Factura (vendedor,id) {
     };
   
     this.agregarProducto = function (pieza, cantidad) {
-      if (Stock.mirarStock(pieza)) {
+      if (Stock.mirarStock(pieza)==true) {
         pieza.cantidad = cantidad;
         Stock.restarStock(pieza, cantidad);
         this.Producto.push(pieza);
         this.montoTotal += pieza.PrecioCantidad * pieza.cantidad;
-      } else {
-        throw ("No hay stock del producto" + pieza.nombre);
-      }
+        this.vendedor.venta+=this.montoTotal
+      } 
     };
   };
   
