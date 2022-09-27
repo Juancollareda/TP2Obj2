@@ -22,15 +22,7 @@ console.log("se le pagara :"+EmpleadoVendedor.pagarSueldo())
 Factura1.Factura()
 console.log(Tornillo.cantidad)
 console.log(Stock.mirarStock(Tornillo))
-/* var empleados=new Array();
-    empleados.push( Ventas("d","w",659,10,2));
-    Ventas.prototype.antiguedadRequerida(2);
-    Ventas.prototype.sueldoPorAntiguedad(0.5);
-    empleados.forEach(element => {
-  //      console.log(element.nombreCompleto());
-        console.log(element.pagarSueldo(55));
-    });
- */
+
 //Factura1.agregarProducto(Tornillo,10000)
 
 
