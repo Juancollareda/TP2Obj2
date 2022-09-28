@@ -1,5 +1,5 @@
 const Empleado=require('./Empleado');
-const Validacion=require('./Validacion');
+const Validacion=require('./Validacion.js');
 function Ventas(nombre,apellido,dni,comision,antiguedadEnAnios){
     var antiguedadRequerida=20;
     var sueldoPorAntiguedad=200;
